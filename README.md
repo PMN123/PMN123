@@ -10,6 +10,8 @@ cs @ purdue. most of my projects start with something annoying me — a medical 
 
 **[BoilerPlanner](https://github.com/PMN123/BoilerPlanner)** — a purdue graduation planner that actually checks your plan against real degree requirements. pick any of ~445 majors/minors, it auto-builds a four-year schedule in prerequisite order, and if you drag a course somewhere illegal it immediately flags the broken prereq chain and offers a one-click fix. the backend is pure python stdlib, so it runs with one command.
 
+**[FloodCut](https://github.com/PMN123/floodcut)** — my entry for the ieee response quest challenge 2026 (made it to phase 3). knowing a river is rising isn't the same as knowing what to do about it, so floodcut fuses live usgs gauges, nws forecasts, surveyed flood thresholds, and road graphs to predict which roads and hospitals lose access next — and turns that into a timed, ranked action board for emergency managers. fastapi + postgis backend, react + maplibre front end, one region replaying hurricane helene and one running live off real gauges.
+
 **[handsfree-office](https://github.com/PMN123/handsfree-office-v2)** — control your computer from your phone: tilt to move the cursor, tap to click, voice for system actions. native ios client talking to a python server over websocket. this is the v2 rebuild — [v1 is here](https://github.com/PMN123/handsfree-office) with the android client too.
 
 ## healthcare ai
