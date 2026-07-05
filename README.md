@@ -1,59 +1,60 @@
-# hey, I'm Praniil 👋
+# hey, i'm praniil
 
-> CS @ Purdue. I build things that should exist but don't.
-
-I have a weird habit of seeing a broken system — medical billing, clinical trials, disaster response — and thinking "this is actually a software problem." Then I spend the next few weeks building something about it. Some of it ships. Some of it wins hackathons. Some of it just scratches the itch.
-
-Right now I'm deep in healthcare AI (on purpose), game AI (for fun), and anything at the edge of "this probably shouldn't be a side project but here we are."
+cs @ purdue. most of my projects start with something annoying me — a medical bill, a four-year plan spreadsheet, my own desk setup — and me deciding it's fixable with code. lately that's been a lot of healthcare stuff, some dev tooling, and whatever hackathon my friends drag me into.
 
 ---
 
-## what I actually build
+## what i'm building right now
 
-**AI that fights for patients** — Medical bills are predatory by design. I've built two full-stack platforms ([BillClarity](https://github.com/PMN123/BillClarity) and [SaveSurance](https://github.com/PMN123/SaveSurance)) that parse uploaded bills with OCR, benchmark every CPT code against Medicare rates, flag billing errors with AI, and generate complete dispute packets — appeal letter, evidence table, phone script, all of it. The kind of thing a billing advocate charges $300/hr to do.
+**CloudShare** — a vs code extension that puts claude in your editor for a flat monthly price, with real per-user token metering and hard budget ceilings underneath so nobody gets a surprise bill. building it with a friend. repo's private while we get it ready to ship, but this is where most of my commits are going these days.
 
-**Clinical ops tooling** — [RetainIQ](https://github.com/PMN123/Churnless) predicts which patients are most likely to drop out of clinical trials before they do. Deterministic risk scoring + Monte Carlo scenario modeling + AI coordinator summaries. Built for the coordinators who actually run the trials, not the executives who approve the budget.
+**[BoilerPlanner](https://github.com/PMN123/BoilerPlanner)** — a purdue graduation planner that actually checks your plan against real degree requirements. pick any of ~445 majors/minors, it auto-builds a four-year schedule in prerequisite order, and if you drag a course somewhere illegal it immediately flags the broken prereq chain and offers a one-click fix. the backend is pure python stdlib, so it runs with one command.
 
-**Your phone as a computer controller** — [HandsFree Office](https://github.com/PMN123/handsfree-office) lets you drive your desktop from your phone — cursor via tilt, clicks via tap, system actions via voice. Native iOS (Swift) + Android (Kotlin) clients talking to a cross-platform Python server over WebSocket. The v2 PRD is 40+ pages. I got a little carried away.
+**[handsfree-office](https://github.com/PMN123/handsfree-office-v2)** — control your computer from your phone: tilt to move the cursor, tap to click, voice for system actions. native ios client talking to a python server over websocket. this is the v2 rebuild — [v1 is here](https://github.com/PMN123/handsfree-office) with the android client too.
 
-**Disaster response GIS** — FloodCut (for the [IEEE Response Quest Challenge](https://github.com/PMN123/ieee)) predicts which roads will get cut off before floodwaters overtop them, ranks which facilities lose access, and gives responders a timed action board instead of just a map. Because knowing water is rising is not the same as knowing what to do about it.
+## healthcare ai
 
-**Medical PII at scale** — A CLI tool that strips PHI from medical PDFs using PyMuPDF redaction + Tesseract OCR, targeting names, MRNs, DOBs, account numbers, and 20+ other identifier classes. Bulk-processes folders, outputs redaction reports, doesn't just black-box over text.
+medical billing in the us is a mess and i keep building things to fight it.
 
-**Officers portal for a global org** — Full Next.js 15 / Supabase / Keycloak SSO system for the Sri Sathya Sai International Organization — manages officer assignments, dashboards, and reports across Center → Region → Country → Zone hierarchy. In production.
+**[BillClarity](https://github.com/UAgarwal7/BillClarity)** — upload a medical bill, it runs ocr, benchmarks every cpt code against medicare rates, flags likely billing errors, and generates a full dispute packet: appeal letter, evidence table, phone script. built at rockethacks 2026.
 
-**Battlecode AI** — Compete annually in MIT's Battlecode tournament. This year's bot has dynamic cheese spending, ratnap target inversion, diagonal trap placement, and a handful of other combat exploits reverse-engineered from the spec. Sometimes the best strategy is just reading the rulebook more carefully than your opponents.
+**[SaveSurance](https://github.com/UAgarwal7/SaveSurance)** — the insurance-side sibling of BillClarity, built at revolutionuc. same idea: turn "this bill looks wrong" into an actual, sendable dispute.
+
+**[Churnless](https://github.com/UAgarwal7/Churnless)** — predicts which patients are likely to drop out of a clinical trial before they do, using deterministic risk scoring plus monte carlo scenario modeling, with ai-written summaries for the coordinators who actually run the trials.
+
+also building a rag-based personal health chatbot (private for now) and an officers portal for a global nonprofit — next.js + supabase + keycloak sso, managing assignments and reports across a center → region → country → zone hierarchy. that one's in production.
+
+## other stuff i'm proud of
+
+**[artemis2-normative-modeling-n4](https://github.com/PMN123/artemis2-normative-modeling-n4)** — my entry for nasa's artemis ii human research data challenge. the problem: how do you do real statistics on a crew of four people? my answer: calibrate a normative model on a big terrestrial cohort (nhanes) and transfer it to real inspiration4 spaceflight biomarker data — empirical-bayes moderated t-tests, sign-flip permutation, gaussian-process recovery trajectories, the whole small-n toolkit. runs end to end with one command.
+
+**[macos-live-wallpaper](https://github.com/PMN123/macos-live-wallpaper)** — i wanted video wallpapers on my mac and didn't want to pay for an electron app that eats 500mb of ram. so: native swift + appkit + avfoundation, lives in the menu bar, zero dependencies.
+
+**battlecode** — i compete in mit's battlecode tournament every january. this year's bot had dynamic cheese spending, ratnap target inversion, and diagonal trap placement, most of which came from reading the game spec more carefully than our opponents did.
 
 ---
 
 ## stack
 
 ```
-Languages    Python · TypeScript · Java · Swift · Kotlin · SQL
-Frontend     React · Next.js 15 · Tailwind · Vite · shadcn/ui
-Backend      FastAPI · Node/Express · Supabase · Deno Edge Functions
-AI/ML        Gemini · AWS Textract + Comprehend Medical · RAG pipelines
-Data         PostgreSQL · SQLite · Redis · pandas · scikit-learn
-Infra        Firebase · Keycloak SSO · Docker (where needed)
-Native       SwiftUI · Jetpack Compose (Android)
+languages    python · typescript · java · swift · kotlin · sql
+frontend     react · next.js · tailwind · vite
+backend      fastapi · node/express · supabase · deno edge functions
+ai/ml        claude api · gemini · aws textract + comprehend medical · rag
+data         postgresql · sqlite · redis · pandas · scikit-learn · scipy
+native       swiftui · appkit · jetpack compose
 ```
 
 ---
 
-## elsewhere
+## find me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-praniil--nagaraj-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/praniilnagaraj)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-praniilnagaraj-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/praniilnagaraj)
 [![Email](https://img.shields.io/badge/email-praniil.nagaraj@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:praniil.nagaraj@gmail.com)
-
----
-
-## github stats
 
 <p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=PMN123&show_icons=true&theme=default&hide_border=true&count_private=true" height="150"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PMN123&layout=compact&theme=default&hide_border=true&langs_count=8" height="150"/>
 </p>
 
----
-
-*I'm always working on something. Ask me what it is.*
+*always working on something. ask me what it is.*
